@@ -1,0 +1,15 @@
+# 拉取MinIO镜像
+docker pull quay.io/minio/minio
+
+# 创建文件挂载点
+mkdir /home/docker/MinIO/data
+
+# 执行命令 访问地址: 端口+9090
+docker run -p 9000:9000 -p 9090:9090 \
+ --name minio1 \
+ -d --restart=always \
+ -e "MINIO_ACCESS_KEY=admin" \
+ -e "MINIO_SECRET_KEY=admin123" \
+ -v /home/docker/minio/data:/data \
+ minio/minio server \
+ /data --console-address ":9090" -address ":9000"
