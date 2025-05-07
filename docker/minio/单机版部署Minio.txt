@@ -6,14 +6,11 @@ docker rm minio
 
 # 如限制 将nginx.conf 替换 主要是http{client_max_body_size 1024M;}  
 
-# 方式1 拉取MinIO镜像
-docker pull quay.io/minio/minio
-
-# 方式2 拉取MinIO镜像
+# 拉取MinIO镜像
 docker pull minio/minio
 
 # 创建文件挂载点
-mkdir /home/docker/MinIO/data
+mkdir -p /home/docker/MinIO/data
 
 # 执行命令 访问地址: 端口+9090
 docker run -p 9000:9000 -p 9090:9090 \

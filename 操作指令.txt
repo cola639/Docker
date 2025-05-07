@@ -1,3 +1,0 @@
-docker pull cola639/ruoyi-springboot:latest
-docker run -d -p 8080:8080 cola639/ruoyi-springboot:latest
-
